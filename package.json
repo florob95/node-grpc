@@ -12,12 +12,17 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "format": "prettier .",
-    "format:fix": "prettier . --write"
+    "format:fix": "prettier . --write",
+    "gen:proto": "protoc --plugin=./node_modules/.bin/protoc-gen-ts_proto --ts_proto_opt=outputServices=grpc --ts_proto_out=src/generated -I=src/protos src/protos/*.proto"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.11.3",
+    "@grpc/proto-loader": "^0.7.13"
+  },
   "devDependencies": {
     "@eslint/js": "^9.12.0",
     "@types/eslint__js": "^8.42.3",
@@ -26,6 +31,10 @@
     "eslint": "^9.12.0",
     "prettier": "^3.3.3",
     "typescript": "^5.6.3",
-    "typescript-eslint": "^8.8.1"
+    "typescript-eslint": "^8.8.1",
+    "ts-proto": "^2.2.1",
+    "@types/node": "^22.7.4",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.2.1"
   }
 }

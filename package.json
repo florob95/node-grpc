@@ -1,0 +1,31 @@
+{
+  "name": "grpc-to-http",
+  "type": "module",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./build/server.js",
+    "start:watch": "node --watch-path=./build ./build/server.js",
+    "start:dev": "concurrently --prefixColors auto \"npm run start:watch\" \"npm run watch\"",
+    "build": "node build.js",
+    "watch": "node watch.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier .",
+    "format:fix": "prettier . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "devDependencies": {
+    "@eslint/js": "^9.12.0",
+    "@types/eslint__js": "^8.42.3",
+    "concurrently": "^9.0.1",
+    "esbuild": "^0.24.0",
+    "eslint": "^9.12.0",
+    "prettier": "^3.3.3",
+    "typescript": "^5.6.3",
+    "typescript-eslint": "^8.8.1"
+  }
+}

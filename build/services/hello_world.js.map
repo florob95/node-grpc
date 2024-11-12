@@ -1,7 +1,0 @@
-{
-  "version": 3,
-  "sources": ["../../src/services/hello_world.ts"],
-  "sourcesContent": ["import * as grpc from '@grpc/grpc-js'\nimport { HelloWorldRequest, HelloWorldResponse } from '../generated/hello_world'\n\ntype HelloWorldService = {\n  HelloWorld: grpc.handleUnaryCall<HelloWorldRequest, HelloWorldRequest>\n}\n\nexport type HelloWorldPackage = {\n  HelloWorldService: {\n    service: grpc.ServiceDefinition<HelloWorldService>\n  }\n}\n\nexport const helloWorld = (\n  call: grpc.ServerUnaryCall<HelloWorldRequest, HelloWorldResponse>,\n  callback: grpc.sendUnaryData<HelloWorldResponse>,\n) => {\n  callback(null, { message: `Hello ${call.request.message}` })\n}\n"],
-  "mappings": "AAaO,MAAM,aAAa,CACxB,MACA,aACG;AACH,WAAS,MAAM,EAAE,SAAS,SAAS,KAAK,QAAQ,OAAO,GAAG,CAAC;AAC7D;",
-  "names": []
-}
